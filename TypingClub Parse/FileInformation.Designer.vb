@@ -29,6 +29,8 @@ Partial Class FileInformation
         Me.dgvInformation = New System.Windows.Forms.DataGridView()
         Me.btnContinue = New System.Windows.Forms.Button()
         Me.lblCorrect = New System.Windows.Forms.Label()
+        Me.btnExportTextFile = New System.Windows.Forms.Button()
+        Me.btnSendKeys = New System.Windows.Forms.Button()
         Me.gbFileInfo.SuspendLayout()
         CType(Me.dgvInformation, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -103,11 +105,33 @@ Partial Class FileInformation
         Me.lblCorrect.TabIndex = 2
         Me.lblCorrect.Text = "Triple Click a Cell to Edit the Value."
         '
+        'btnExportTextFile
+        '
+        Me.btnExportTextFile.Location = New System.Drawing.Point(281, 355)
+        Me.btnExportTextFile.Name = "btnExportTextFile"
+        Me.btnExportTextFile.Size = New System.Drawing.Size(162, 41)
+        Me.btnExportTextFile.TabIndex = 3
+        Me.btnExportTextFile.Text = "Export"
+        Me.btnExportTextFile.UseVisualStyleBackColor = True
+        Me.btnExportTextFile.Visible = False
+        '
+        'btnSendKeys
+        '
+        Me.btnSendKeys.Location = New System.Drawing.Point(102, 355)
+        Me.btnSendKeys.Name = "btnSendKeys"
+        Me.btnSendKeys.Size = New System.Drawing.Size(162, 41)
+        Me.btnSendKeys.TabIndex = 4
+        Me.btnSendKeys.Text = "Send Keys"
+        Me.btnSendKeys.UseVisualStyleBackColor = True
+        Me.btnSendKeys.Visible = False
+        '
         'FileInformation
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(557, 408)
+        Me.Controls.Add(Me.btnSendKeys)
+        Me.Controls.Add(Me.btnExportTextFile)
         Me.Controls.Add(Me.lblCorrect)
         Me.Controls.Add(Me.btnContinue)
         Me.Controls.Add(Me.dgvInformation)
@@ -129,4 +153,6 @@ Partial Class FileInformation
     Friend WithEvents dgvInformation As DataGridView
     Friend WithEvents btnContinue As Button
     Friend WithEvents lblCorrect As Label
+    Friend WithEvents btnExportTextFile As Button
+    Friend WithEvents btnSendKeys As Button
 End Class

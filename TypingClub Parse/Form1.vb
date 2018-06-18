@@ -77,7 +77,7 @@ Public Class Form1
         End If
 
         'var.week = InputBox("Enter the Week Number: ", "Week Num")
-        var.week = "4"
+        var.week = "9"
 
         GetFileInfo()
 
@@ -91,6 +91,12 @@ Public Class Form1
 
         If fileName.Contains("chlebek") Then
             var.teacher = "Chlebek"
+            parts = fileName.Split("-"c)
+            var.hour = parts(2)
+        End If
+
+        If fileName.Contains("johns") Then
+            var.teacher = "Johns"
             parts = fileName.Split("-"c)
             var.hour = parts(2)
         End If
