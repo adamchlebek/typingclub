@@ -51,8 +51,8 @@ Public Class Form1
         lblDrag.Text = "File Loaded"
         lblDrag.Left = (Me.ClientSize.Width - lblDrag.Width) / 2
 
-        'var.week = InputBox("Enter the Week Number: ", "Week Num")
-        var.week = "4"
+        var.week = InputBox("Enter the Week Number: ", "Week Num")
+        'var.week = "4"
 
         GetFileInfo()
 
