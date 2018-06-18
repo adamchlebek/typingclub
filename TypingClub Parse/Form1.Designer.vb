@@ -22,118 +22,56 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.txtFilePath = New System.Windows.Forms.TextBox()
-        Me.gbFileInfo = New System.Windows.Forms.GroupBox()
-        Me.lblCreated = New System.Windows.Forms.Label()
-        Me.lblFileSize = New System.Windows.Forms.Label()
-        Me.lblFileType = New System.Windows.Forms.Label()
-        Me.lblFileName = New System.Windows.Forms.Label()
-        Me.lblModified = New System.Windows.Forms.Label()
-        Me.pbIcon = New System.Windows.Forms.PictureBox()
-        Me.gbFileInfo.SuspendLayout()
-        CType(Me.pbIcon, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.lblDrag = New System.Windows.Forms.Label()
+        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'txtFilePath
+        'PictureBox1
         '
-        Me.txtFilePath.Enabled = False
-        Me.txtFilePath.Location = New System.Drawing.Point(13, 13)
-        Me.txtFilePath.Name = "txtFilePath"
-        Me.txtFilePath.Size = New System.Drawing.Size(441, 20)
-        Me.txtFilePath.TabIndex = 0
+        Me.PictureBox1.Image = Global.TypingClub_Parse.My.Resources.Resources.Upload
+        Me.PictureBox1.Location = New System.Drawing.Point(197, 63)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(150, 150)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 0
+        Me.PictureBox1.TabStop = False
         '
-        'gbFileInfo
+        'lblDrag
         '
-        Me.gbFileInfo.Controls.Add(Me.pbIcon)
-        Me.gbFileInfo.Controls.Add(Me.lblModified)
-        Me.gbFileInfo.Controls.Add(Me.lblCreated)
-        Me.gbFileInfo.Controls.Add(Me.lblFileSize)
-        Me.gbFileInfo.Controls.Add(Me.lblFileType)
-        Me.gbFileInfo.Controls.Add(Me.lblFileName)
-        Me.gbFileInfo.Location = New System.Drawing.Point(13, 75)
-        Me.gbFileInfo.Name = "gbFileInfo"
-        Me.gbFileInfo.Size = New System.Drawing.Size(441, 116)
-        Me.gbFileInfo.TabIndex = 1
-        Me.gbFileInfo.TabStop = False
-        Me.gbFileInfo.Text = "File Info"
+        Me.lblDrag.AutoSize = True
+        Me.lblDrag.Font = New System.Drawing.Font("Century Gothic", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDrag.Location = New System.Drawing.Point(152, 216)
+        Me.lblDrag.Name = "lblDrag"
+        Me.lblDrag.Size = New System.Drawing.Size(254, 28)
+        Me.lblDrag.TabIndex = 1
+        Me.lblDrag.Text = "Drag and Drop a File"
         '
-        'lblCreated
+        'OpenFileDialog1
         '
-        Me.lblCreated.AutoSize = True
-        Me.lblCreated.Location = New System.Drawing.Point(79, 70)
-        Me.lblCreated.Name = "lblCreated"
-        Me.lblCreated.Size = New System.Drawing.Size(47, 13)
-        Me.lblCreated.TabIndex = 3
-        Me.lblCreated.Text = "Created:"
-        '
-        'lblFileSize
-        '
-        Me.lblFileSize.AutoSize = True
-        Me.lblFileSize.Location = New System.Drawing.Point(79, 42)
-        Me.lblFileSize.Name = "lblFileSize"
-        Me.lblFileSize.Size = New System.Drawing.Size(49, 13)
-        Me.lblFileSize.TabIndex = 2
-        Me.lblFileSize.Text = "File Size:"
-        '
-        'lblFileType
-        '
-        Me.lblFileType.AutoSize = True
-        Me.lblFileType.Location = New System.Drawing.Point(79, 29)
-        Me.lblFileType.Name = "lblFileType"
-        Me.lblFileType.Size = New System.Drawing.Size(53, 13)
-        Me.lblFileType.TabIndex = 1
-        Me.lblFileType.Text = "File Type:"
-        '
-        'lblFileName
-        '
-        Me.lblFileName.AutoSize = True
-        Me.lblFileName.Location = New System.Drawing.Point(79, 16)
-        Me.lblFileName.Name = "lblFileName"
-        Me.lblFileName.Size = New System.Drawing.Size(57, 13)
-        Me.lblFileName.TabIndex = 0
-        Me.lblFileName.Text = "File Name:"
-        '
-        'lblModified
-        '
-        Me.lblModified.AutoSize = True
-        Me.lblModified.Location = New System.Drawing.Point(79, 83)
-        Me.lblModified.Name = "lblModified"
-        Me.lblModified.Size = New System.Drawing.Size(50, 13)
-        Me.lblModified.TabIndex = 4
-        Me.lblModified.Text = "Modified:"
-        '
-        'pbIcon
-        '
-        Me.pbIcon.Location = New System.Drawing.Point(6, 17)
-        Me.pbIcon.Name = "pbIcon"
-        Me.pbIcon.Size = New System.Drawing.Size(67, 66)
-        Me.pbIcon.TabIndex = 5
-        Me.pbIcon.TabStop = False
+        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
         '
         'Form1
         '
         Me.AllowDrop = True
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(466, 214)
-        Me.Controls.Add(Me.gbFileInfo)
-        Me.Controls.Add(Me.txtFilePath)
+        Me.ClientSize = New System.Drawing.Size(546, 377)
+        Me.Controls.Add(Me.lblDrag)
+        Me.Controls.Add(Me.PictureBox1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
+        Me.MaximumSize = New System.Drawing.Size(562, 416)
+        Me.MinimumSize = New System.Drawing.Size(562, 416)
         Me.Name = "Form1"
-        Me.Text = "File Check"
-        Me.gbFileInfo.ResumeLayout(False)
-        Me.gbFileInfo.PerformLayout()
-        CType(Me.pbIcon, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Text = "Select File"
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
-    Friend WithEvents txtFilePath As TextBox
-    Friend WithEvents gbFileInfo As GroupBox
-    Friend WithEvents lblCreated As Label
-    Friend WithEvents lblFileSize As Label
-    Friend WithEvents lblFileType As Label
-    Friend WithEvents lblFileName As Label
-    Friend WithEvents lblModified As Label
-    Friend WithEvents pbIcon As PictureBox
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents lblDrag As Label
+    Friend WithEvents OpenFileDialog1 As OpenFileDialog
 End Class
