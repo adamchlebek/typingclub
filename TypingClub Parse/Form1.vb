@@ -15,7 +15,7 @@ Public Class Form1
 
         If String.IsNullOrWhiteSpace(var.myFile.Extension) Then Exit Sub
 
-        pbIcon.Image = Icon.ExtractAssociatedIcon(var.myFile.FullName).ToBitmap
+        DraggedFile()
     End Sub
 
     Private Sub Form1_Paint(sender As Object, e As PaintEventArgs) Handles Me.Paint
@@ -46,20 +46,54 @@ Public Class Form1
         GetFile()
     End Sub
 
+    Public Sub DraggedFile()
+        pbIcon.Image = My.Resources.checkmark
+        lblDrag.Text = "File Loaded"
+        lblDrag.Left = (Me.ClientSize.Width - lblDrag.Width) / 2
+
+        'var.week = InputBox("Enter the Week Number: ", "Week Num")
+        var.week = "4"
+
+        GetFileInfo()
+
+        FileInformation.Show()
+        Me.Hide()
+    End Sub
+
     Public Sub GetFile()
         Dim fileName As String
         Dim openFileDialog1 As OpenFileDialog = New OpenFileDialog()
 
-        openFileDialog1.Filter = "CSV Files (*.csv)|*.csv|Excel Files (*.xls)|*.xls"
+        openFileDialog1.Filter = "Excel or CSV (*.csv; *.xlsx)|*.csv; *.xlsx"
         openFileDialog1.Title = "Select a File"
 
         If openFileDialog1.ShowDialog() = System.Windows.Forms.DialogResult.OK Then
             fileName = openFileDialog1.FileName
             var.myFile = New FileInfo(fileName)
+
+            pbIcon.Image = My.Resources.checkmark
+            lblDrag.Text = "File Loaded"
+            lblDrag.Left = (Me.ClientSize.Width - lblDrag.Width) / 2
         End If
 
-        pbIcon.Image = Icon.ExtractAssociatedIcon(var.myFile.FullName).ToBitmap
-        lblDrag.Text = var.myFile.FullName
-        lblDrag.Left = (Me.ClientSize.Width - lblDrag.Width) / 2
+        'var.week = InputBox("Enter the Week Number: ", "Week Num")
+        var.week = "4"
+
+        GetFileInfo()
+
+        FileInformation.Show()
+        Me.Hide()
+    End Sub
+
+    Public Sub GetFileInfo()
+        Dim fileName As String = var.myFile.Name
+        Dim parts As String()
+
+        If fileName.Contains("chlebek") Then
+            var.teacher = "Chlebek"
+            parts = fileName.Split("-"c)
+            var.hour = parts(2)
+        End If
+
     End Sub
 End Class

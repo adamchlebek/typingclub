@@ -22,21 +22,11 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.pbIcon = New System.Windows.Forms.PictureBox()
         Me.lblDrag = New System.Windows.Forms.Label()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
+        Me.pbIcon = New System.Windows.Forms.PictureBox()
         CType(Me.pbIcon, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'pbIcon
-        '
-        Me.pbIcon.Image = Global.TypingClub_Parse.My.Resources.Resources.Upload
-        Me.pbIcon.Location = New System.Drawing.Point(197, 63)
-        Me.pbIcon.Name = "pbIcon"
-        Me.pbIcon.Size = New System.Drawing.Size(150, 150)
-        Me.pbIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.pbIcon.TabIndex = 0
-        Me.pbIcon.TabStop = False
         '
         'lblDrag
         '
@@ -51,6 +41,16 @@ Partial Class Form1
         'OpenFileDialog1
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
+        '
+        'pbIcon
+        '
+        Me.pbIcon.Image = Global.TypingClub_Parse.My.Resources.Resources.Upload
+        Me.pbIcon.Location = New System.Drawing.Point(197, 63)
+        Me.pbIcon.Name = "pbIcon"
+        Me.pbIcon.Size = New System.Drawing.Size(150, 150)
+        Me.pbIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pbIcon.TabIndex = 0
+        Me.pbIcon.TabStop = False
         '
         'Form1
         '
