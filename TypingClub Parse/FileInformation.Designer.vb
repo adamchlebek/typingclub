@@ -22,7 +22,10 @@ Partial Class FileInformation
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.gbFileInfo = New System.Windows.Forms.GroupBox()
+        Me.lblTimer = New System.Windows.Forms.Label()
+        Me.lblCapscore = New System.Windows.Forms.Label()
         Me.lblWeek = New System.Windows.Forms.Label()
         Me.lblHour = New System.Windows.Forms.Label()
         Me.lblTeacher = New System.Windows.Forms.Label()
@@ -31,12 +34,15 @@ Partial Class FileInformation
         Me.lblCorrect = New System.Windows.Forms.Label()
         Me.btnExportTextFile = New System.Windows.Forms.Button()
         Me.btnSendKeys = New System.Windows.Forms.Button()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.gbFileInfo.SuspendLayout()
         CType(Me.dgvInformation, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'gbFileInfo
         '
+        Me.gbFileInfo.Controls.Add(Me.lblTimer)
+        Me.gbFileInfo.Controls.Add(Me.lblCapscore)
         Me.gbFileInfo.Controls.Add(Me.lblWeek)
         Me.gbFileInfo.Controls.Add(Me.lblHour)
         Me.gbFileInfo.Controls.Add(Me.lblTeacher)
@@ -47,6 +53,27 @@ Partial Class FileInformation
         Me.gbFileInfo.TabIndex = 0
         Me.gbFileInfo.TabStop = False
         Me.gbFileInfo.Text = "File Information"
+        '
+        'lblTimer
+        '
+        Me.lblTimer.AutoSize = True
+        Me.lblTimer.Font = New System.Drawing.Font("Century Gothic", 20.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblTimer.Location = New System.Drawing.Point(190, 28)
+        Me.lblTimer.Name = "lblTimer"
+        Me.lblTimer.Size = New System.Drawing.Size(149, 32)
+        Me.lblTimer.TabIndex = 5
+        Me.lblTimer.Text = "5 Seconds"
+        Me.lblTimer.Visible = False
+        '
+        'lblCapscore
+        '
+        Me.lblCapscore.AutoSize = True
+        Me.lblCapscore.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblCapscore.Location = New System.Drawing.Point(400, 47)
+        Me.lblCapscore.Name = "lblCapscore"
+        Me.lblCapscore.Size = New System.Drawing.Size(127, 21)
+        Me.lblCapscore.TabIndex = 4
+        Me.lblCapscore.Text = "Cap Score: XXX"
         '
         'lblWeek
         '
@@ -107,6 +134,7 @@ Partial Class FileInformation
         '
         'btnExportTextFile
         '
+        Me.btnExportTextFile.Enabled = False
         Me.btnExportTextFile.Location = New System.Drawing.Point(281, 355)
         Me.btnExportTextFile.Name = "btnExportTextFile"
         Me.btnExportTextFile.Size = New System.Drawing.Size(162, 41)
@@ -124,6 +152,9 @@ Partial Class FileInformation
         Me.btnSendKeys.Text = "Send Keys"
         Me.btnSendKeys.UseVisualStyleBackColor = True
         Me.btnSendKeys.Visible = False
+        '
+        'Timer1
+        '
         '
         'FileInformation
         '
@@ -155,4 +186,7 @@ Partial Class FileInformation
     Friend WithEvents lblCorrect As Label
     Friend WithEvents btnExportTextFile As Button
     Friend WithEvents btnSendKeys As Button
+    Friend WithEvents lblCapscore As Label
+    Friend WithEvents lblTimer As Label
+    Friend WithEvents Timer1 As Timer
 End Class

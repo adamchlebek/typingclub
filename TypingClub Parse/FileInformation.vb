@@ -3,13 +3,15 @@ Imports System.Text.RegularExpressions
 Imports System.Runtime
 
 Public Class FileInformation
-    Dim editing As Boolean = False
+    Dim curTime As Decimal = 5
+
     Private Sub FileInformation_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.CenterToScreen()
 
         lblTeacher.Text = var.teacher
         lblHour.Text = var.hour & " hour"
         lblWeek.Text = "Week #" & var.week
+        lblCapscore.Text = "Cap Score: " & var.week * 60
         dgvInformation.ColumnCount = 3
         dgvInformation.Columns(0).Name = "Last Name"
         dgvInformation.Columns(1).Name = "First Name"
@@ -77,7 +79,6 @@ Public Class FileInformation
     End Sub
 
     Public Sub FillScore()
-        Dim score As Integer
         Dim capScore As Integer = 60 * var.week
 
         For i As Integer = 0 To var.firstName.Count - 1
@@ -144,21 +145,6 @@ Public Class FileInformation
             var.lastName.Add(dgvInformation.Rows(i - 1).Cells("Last Name").Value.ToString)
             var.hours.Add(dgvInformation.Rows(i - 1).Cells("Hours").Value.ToString)
         Next
-    End Sub
-
-    Private Sub btnNo_Click(sender As Object, e As EventArgs)
-        MsgBox("Please select the cell that is incorrect!")
-        editing = True
-    End Sub
-
-    Private Sub dgvInformation_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvInformation.CellContentClick
-        If editing Then
-            Dim str As String = InputBox("Enter the information you would like to change: ", "Edit Value")
-
-            If Not str = "" Then
-                dgvInformation.CurrentCell.Value = str
-            End If
-        End If
     End Sub
 
     Private Sub btnContinue_Click(sender As Object, e As EventArgs) Handles btnContinue.Click
@@ -234,8 +220,39 @@ Public Class FileInformation
             End Select
         Next
 
+        dgvInformation.EditMode = DataGridViewEditMode.EditProgrammatically
+        lblCorrect.Text = "Choose your export method."
+        lblCorrect.Left = (Me.ClientSize.Width - lblCorrect.Width) / 2
+
         btnContinue.Visible = False
         btnSendKeys.Visible = True
         btnExportTextFile.Visible = True
+    End Sub
+
+    Private Sub btnSendKeys_Click(sender As Object, e As EventArgs) Handles btnSendKeys.Click
+        MsgBox("Open up your gradebook and click in the first column. After you click OK, you have 5 seconds until it begins.")
+
+        lblTimer.Visible = True
+        Timer1.Enabled = True
+    End Sub
+
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        If curTime <> -0.1 Then
+            lblTimer.Text = curTime & " seconds"
+            curTime -= 0.1
+            Application.DoEvents()
+        Else
+            Timer1.Enabled = False
+            For i As Integer = 0 To var.score.Count - 1
+                SendKeys.Send(var.score.Item(i))
+                SendKeys.Send("{ENTER}")
+                'SendKeys.Send("{TAB}")
+            Next
+
+            Threading.Thread.Sleep(500)
+
+            MsgBox("Scores sucessfully imported.")
+        End If
+
     End Sub
 End Class
