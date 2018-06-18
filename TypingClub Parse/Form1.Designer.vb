@@ -22,21 +22,21 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.pbIcon = New System.Windows.Forms.PictureBox()
         Me.lblDrag = New System.Windows.Forms.Label()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.pbIcon, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'PictureBox1
+        'pbIcon
         '
-        Me.PictureBox1.Image = Global.TypingClub_Parse.My.Resources.Resources.Upload
-        Me.PictureBox1.Location = New System.Drawing.Point(197, 63)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(150, 150)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 0
-        Me.PictureBox1.TabStop = False
+        Me.pbIcon.Image = Global.TypingClub_Parse.My.Resources.Resources.Upload
+        Me.pbIcon.Location = New System.Drawing.Point(197, 63)
+        Me.pbIcon.Name = "pbIcon"
+        Me.pbIcon.Size = New System.Drawing.Size(150, 150)
+        Me.pbIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pbIcon.TabIndex = 0
+        Me.pbIcon.TabStop = False
         '
         'lblDrag
         '
@@ -59,19 +59,19 @@ Partial Class Form1
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(546, 377)
         Me.Controls.Add(Me.lblDrag)
-        Me.Controls.Add(Me.PictureBox1)
+        Me.Controls.Add(Me.pbIcon)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.MaximumSize = New System.Drawing.Size(562, 416)
         Me.MinimumSize = New System.Drawing.Size(562, 416)
         Me.Name = "Form1"
         Me.Text = "Select File"
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.pbIcon, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
-    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents pbIcon As PictureBox
     Friend WithEvents lblDrag As Label
     Friend WithEvents OpenFileDialog1 As OpenFileDialog
 End Class
