@@ -31,8 +31,8 @@ Public Class FileInformation
             While Not reader.EndOfStream
                 Dim line As String = reader.ReadLine()
                 Dim values = line.Split(","c)
-                var.lastName.Add(values(0))
-                var.firstName.Add(values(1))
+                var.lastName.Add(values(1))
+                var.firstName.Add(values(0))
                 var.hours.Add(values(9))
             End While
         End Using
@@ -141,8 +141,8 @@ Public Class FileInformation
         var.hours.Clear()
 
         For i As Integer = 1 To dgvInformation.RowCount - 1
-            var.firstName.Add(dgvInformation.Rows(i - 1).Cells("First Name").Value.ToString)
             var.lastName.Add(dgvInformation.Rows(i - 1).Cells("Last Name").Value.ToString)
+            var.firstName.Add(dgvInformation.Rows(i - 1).Cells("First Name").Value.ToString)
             var.hours.Add(dgvInformation.Rows(i - 1).Cells("Hours").Value.ToString)
         Next
     End Sub
