@@ -47,7 +47,6 @@ Public Class Form1
     End Sub
 
     Public Sub DraggedFile()
-        pbIcon.Image = My.Resources.checkmark
         lblDrag.Text = "File Loaded"
         lblDrag.Left = (Me.ClientSize.Width - lblDrag.Width) / 2
 
@@ -71,7 +70,6 @@ Public Class Form1
             fileName = openFileDialog1.FileName
             var.myFile = New FileInfo(fileName)
 
-            pbIcon.Image = My.Resources.checkmark
             lblDrag.Text = "File Loaded"
             lblDrag.Left = (Me.ClientSize.Width - lblDrag.Width) / 2
         End If

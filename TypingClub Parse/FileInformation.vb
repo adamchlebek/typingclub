@@ -220,8 +220,8 @@ Public Class FileInformation
             End Select
         Next
 
-        dgvInformation.EditMode = DataGridViewEditMode.EditProgrammatically
-        lblCorrect.Text = "Choose your export method."
+        'dgvInformation.EditMode = DataGridViewEditMode.EditProgrammatically
+        lblCorrect.Text = "Choose your export method. (You can still edit if needed.)"
         lblCorrect.Left = (Me.ClientSize.Width - lblCorrect.Width) / 2
 
         btnContinue.Visible = False
