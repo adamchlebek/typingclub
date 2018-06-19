@@ -160,7 +160,7 @@ Public Class FileInformation
         dgvInformation.Columns(3).Name = "Score"
 
         For i As Integer = 0 To var.totalTime.Count - 1
-            dgvInformation.Rows(i).Cells("Minutes").Value = var.totalTime.Item(i)
+            dgvInformation.Rows(i).Cells("Minutes").Value = CType(var.totalTime.Item(i), Integer)
         Next
 
         FillScore()

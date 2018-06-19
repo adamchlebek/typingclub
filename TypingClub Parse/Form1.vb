@@ -76,8 +76,8 @@ Public Class Form1
             lblDrag.Left = (Me.ClientSize.Width - lblDrag.Width) / 2
         End If
 
-        'var.week = InputBox("Enter the Week Number: ", "Week Num")
-        var.week = "9"
+        var.week = InputBox("Enter the Week Number: ", "Week Num")
+        'var.week = "9"
 
         GetFileInfo()
 

@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class FileInformation
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class FileInformation
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.gbFileInfo = New System.Windows.Forms.GroupBox()
@@ -110,12 +110,12 @@ Partial Class FileInformation
         Me.dgvInformation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvInformation.Location = New System.Drawing.Point(12, 102)
         Me.dgvInformation.Name = "dgvInformation"
-        Me.dgvInformation.Size = New System.Drawing.Size(533, 226)
+        Me.dgvInformation.Size = New System.Drawing.Size(533, 261)
         Me.dgvInformation.TabIndex = 1
         '
         'btnContinue
         '
-        Me.btnContinue.Location = New System.Drawing.Point(189, 355)
+        Me.btnContinue.Location = New System.Drawing.Point(189, 390)
         Me.btnContinue.Name = "btnContinue"
         Me.btnContinue.Size = New System.Drawing.Size(162, 41)
         Me.btnContinue.TabIndex = 2
@@ -126,7 +126,7 @@ Partial Class FileInformation
         '
         Me.lblCorrect.AutoSize = True
         Me.lblCorrect.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblCorrect.Location = New System.Drawing.Point(133, 331)
+        Me.lblCorrect.Location = New System.Drawing.Point(133, 366)
         Me.lblCorrect.Name = "lblCorrect"
         Me.lblCorrect.Size = New System.Drawing.Size(278, 21)
         Me.lblCorrect.TabIndex = 2
@@ -135,7 +135,7 @@ Partial Class FileInformation
         'btnExportTextFile
         '
         Me.btnExportTextFile.Enabled = False
-        Me.btnExportTextFile.Location = New System.Drawing.Point(281, 355)
+        Me.btnExportTextFile.Location = New System.Drawing.Point(281, 390)
         Me.btnExportTextFile.Name = "btnExportTextFile"
         Me.btnExportTextFile.Size = New System.Drawing.Size(162, 41)
         Me.btnExportTextFile.TabIndex = 3
@@ -145,7 +145,7 @@ Partial Class FileInformation
         '
         'btnSendKeys
         '
-        Me.btnSendKeys.Location = New System.Drawing.Point(102, 355)
+        Me.btnSendKeys.Location = New System.Drawing.Point(102, 390)
         Me.btnSendKeys.Name = "btnSendKeys"
         Me.btnSendKeys.Size = New System.Drawing.Size(162, 41)
         Me.btnSendKeys.TabIndex = 4
@@ -160,7 +160,7 @@ Partial Class FileInformation
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(557, 408)
+        Me.ClientSize = New System.Drawing.Size(557, 443)
         Me.Controls.Add(Me.btnSendKeys)
         Me.Controls.Add(Me.btnExportTextFile)
         Me.Controls.Add(Me.lblCorrect)
